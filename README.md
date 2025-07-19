@@ -8,14 +8,11 @@ A simple web app that checks whether a piece of text was written by AI or a huma
 - Clean, minimal interface
 - No data stored or saved
 
-**Live Site**
-
-Visit: https://your-app.onrender.com
 
 **Running Locally**
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/ai-or-not.git
+   git clone https://github.com/HashimmNYC/ai-or-not.git
 
 2. Navigate into the folder:
    cd ai-or-not
