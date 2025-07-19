@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI or Not</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white min-h-screen flex flex-col items-center justify-center px-4">
+    <div class="w-full max-w-2xl py-10">
+      <header class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">🧠 AI or Not</h1>
+        <p class="text-gray-600">Detect if your text was written by a human or AI</p>
+      </header>
+
+      <form method="post" class="bg-white p-6 rounded-xl shadow-md space-y-6 border">
+        <textarea
+          name="user_input"
+          placeholder="Paste your text here..."
+          class="w-full h-40 p-4 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>{{ user_input or '' }}</textarea>
+
+        <button
+          type="submit"
+          class="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+          Analyze
+        </button>
+      </form>
+
+      {% if ai_prob is not none %}
+      <div class="mt-8 text-center space-y-2">
+        <h2 class="text-xl font-semibold text-gray-700">Results:</h2>
+        <p class="text-lg">🤖 <strong>AI Probability:</strong> <span class="text-red-500">{{ ai_prob }}%</span></p>
+        <p class="text-lg">🧠 <strong>Human Probability:</strong> <span class="text-green-600">{{ human_prob }}%</span></p>
+      </div>
+      {% endif %}
+
+      <footer class="mt-10 text-sm text-center text-gray-400">
+        Built with 🤍 using Hugging Face + FastAPI
+      </footer>
+    </div>
+  </body>
+</html>
